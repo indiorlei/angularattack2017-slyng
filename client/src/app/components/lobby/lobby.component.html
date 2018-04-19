@@ -1,0 +1,82 @@
+<div class="container row">
+	
+	<aside class="content lobby-user">
+		<div class="content-inner">
+
+			<div class="content-user bg-block">
+				<div class="title">
+					<h1>Welcome</h1>
+				</div>
+				<div class="content-logout content-button">
+					<button class="button" (click)="logout()" *ngIf="authService.user">Logout</button>
+				</div>
+				<div class="bg-block bg-wood">
+					<div class="container-image">
+						<figure class="figure-user">
+							<img src="{{ (authService.player)?.photoURL }}">
+						</figure>
+					</div>
+					<div class="content-name">
+						<h2 class="name-user">{{(authService.player)?.displayName}}</h2>
+					</div>
+					<div class="infos-user"></div>
+				</div>
+			</div>
+
+			<div class="content-online bg-block">
+				<div class="title">
+					<h1>Online Users</h1>	
+				</div>
+				<div class="bg-block bg-wood">
+					<ul>
+						<li class="text" *ngFor="let player of onlinePlayers | async">
+							<div class="container-image">
+								<figure class="figure-user">
+									<img src="{{ (player)?.photoURL }}">
+								</figure>
+							</div>
+							<div class="content-name">
+								<h2 class="name-user">{{(player)?.displayName}}</h2>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</aside>
+
+	<section class="content lobby-content">
+		<div class="content-inner">
+			<div class="title">
+				<h1>Rooms</h1>	
+			</div>
+			<div class="content-new-room content-button">
+				<a href="#create-room" class="button">Create room</a>
+			</div>
+			<div class="bg-block bg-wood">
+				<div class="bg-todo">
+					<ul class="room-list">
+						<li class="text" *ngFor="let room of gameRooms | async" [ngClass]="{'CLASSE': room.gameStarted}">
+							<p>{{room.name}}</p>
+							<a *ngIf="!room.gameStarted" routerLink="/room/{{room.id}}">Join</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</div>
+
+<div class="modal" id="create-room" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-header">
+			<h2 class="title-form">Create Room</h2>
+			<a href="#" class="btn-close" aria-hidden="true">×</a>
+		</div>
+		<div class="modal-body">
+			<app-lobby-create-room></app-lobby-create-room>
+		</div>
+		<div class="modal-footer"></div>
+	</div>
+</div>

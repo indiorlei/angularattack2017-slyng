@@ -1,0 +1,119 @@
+.title-game {
+	margin: 40px;
+}
+.content-team {
+	float: left;
+	width: 40%;
+	background-color: #fffbef;
+	min-height: 230px;
+	margin: 20px;
+
+	li {
+		font-family: 'Luckiest Guy', cursive;
+		color: rgba(103, 63, 27, 1);
+		font-size: 20px;
+		border: 10px solid transparent;
+		border-image: url('/assets/backgrounds/border-title.png') 30 round;
+		background-color: #e7a149;
+		box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.1);
+		display: block;
+		padding: 15px 47px 13px;
+		margin: 20px;
+		position: relative;
+		min-height: 25px;
+
+		&:before {
+			content: '';
+			position: absolute;
+			background: url('/assets/backgrounds/rope-left.png');
+			width: 34px;
+			height: 55px;
+			left: -10px;
+			top: 0;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			background: url('/assets/backgrounds/rope-right.png');
+			width: 29px;
+			height: 55px;
+			right: -10px;
+			top: 0;
+		}
+	}
+	.content-inner {
+		padding: 20px 20px 20px 0;
+	}
+	.container-image {
+		font-size: 0;
+		width: 50px;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 40px;
+
+		img {
+			width: 100%
+		}
+	}
+	.content-name {
+		float: left;
+		width: 85%;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		text-align: right;
+
+		@media only screen and (max-width:1010px) {
+			padding: .5em 0;
+		}
+		h2 {
+			text-align: right;
+		}
+	}
+	&:nth-child(3) {
+		float: right;
+
+		.content-inner {
+			padding: 20px 0 20px 20px;
+		}
+		.container-image {
+			right: 40px;
+			left: inherit;
+		}
+		.content-name {
+			float: right;
+
+			h2 {
+				text-align: left;
+			}
+		}
+	}
+}
+.content-back {
+	position: absolute;
+	right: 20px;
+}
+.start-button {
+	width: 100%;
+	text-align: center;
+	margin-top: 5%;
+
+	.content-button {
+		display: inline-block;
+
+		.button {
+			font-size: 77px;
+		}
+	}
+}
+.vs {
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	top: 20%;
+}
+.content-center {
+	float: left;
+	width: 10%;
+}

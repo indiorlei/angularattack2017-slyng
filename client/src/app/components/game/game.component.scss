@@ -1,0 +1,123 @@
+@-webkit-keyframes ef-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@keyframes ef-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+#time {
+	font-family: 'Luckiest Guy', cursive;
+	font-size: 100px;
+	color: #ff930c;
+	position: absolute;
+	z-index: 10000;
+	top: 20px;
+	right: 40px;
+	 -webkit-animation-name: ef-pulse-grow;
+  animation-name: ef-pulse-grow;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+  text-shadow: 2px 2px 0px rgba(0,0,0,1);
+}
+
+#currentPlayerName {
+	text-shadow: 2px 2px 0px rgba(0,0,0,1);
+	font-family: 'Luckiest Guy', cursive;
+	font-size: 30px;
+	color: #ff930c;
+	position: absolute;
+	z-index: 10000;
+	top: 20px;
+	left: 20px;
+}
+#currentPlayerName small {
+	font-size: 15px;
+}
+
+#wind {
+	background-image: url('/assets/backgrounds/wind.png');
+	width: 140px;
+	height: 137px;
+	text-shadow: 2px 2px 0px rgba(0,0,0,1);
+	font-family: 'Luckiest Guy', cursive;
+	font-size: 50px;
+	color: #fff;
+	position: absolute;
+	z-index: 10000;
+	top: 20px;
+	left: 50%;
+	transform: translateX(-50%); 
+	text-align: center;
+	line-height: 137px;
+}
+#wind {
+
+	&.left:before {
+		content: '';
+		background-image: url('/assets/backgrounds/arrow.png');
+		position: absolute;
+		width: 14px;	
+		height: 28px;
+		left: 13px;
+    top: 56px;
+	}
+
+	&.right:before {
+		content: '';
+		background-image: url('/assets/backgrounds/arrow.png');
+		-ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+		position: absolute;
+		width: 14px;	
+		height: 28px;
+		right: 13px;
+    top: 56px;
+	}
+} 
+
+#howTo {
+	text-shadow: 2px 2px 0px rgba(0,0,0,1);
+	font-family: 'Luckiest Guy', cursive;
+	font-size: 30px;
+	color: #fff;
+	position: absolute;
+	z-index: 10000;
+	top: 200px;
+	left: 50%;
+	transform: translateX(-50%); 
+}
+#sorry {
+	text-shadow: 2px 2px 0px rgba(0,0,0,1);
+	font-family: 'Luckiest Guy', cursive;
+	font-size: 35px;
+	color: #ff930c;
+	position: absolute;
+	z-index: 10000;
+	top: 200px;
+	left: 50%;
+	transform: translateX(-50%); 
+}
+
+#exitButton {
+	position: absolute;
+	z-index: 10000;
+	bottom: 5px;
+	right: 10px;
+	.button {
+	  font-size: 20px;
+	  padding: 5px;
+	}
+}

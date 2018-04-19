@@ -1,0 +1,122 @@
+.main {
+	// background-image: url('/assets/backgrounds/game.png');
+	// background-size: cover;
+	// background-position: center;
+	// background-attachment: fixed;
+	// width: 100vw;
+	// height: 100vh;
+}
+.content-login {
+	left: 50%;
+	top: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+
+	button {
+		background: #3c4c84;
+		border-radius: 8px;
+		color: #fff;
+		display: block;
+		font-size: 1.6em;
+		letter-spacing: 2px;
+		font-weight: 100;
+		padding: 20px 26px 20px 82px;
+		text-align: center;
+		border: none;
+		cursor: pointer;
+		position: relative;
+		transition: all .35s cubic-bezier(0.19, 1, 0.22, 1);
+		box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, .6);
+
+		&:hover {
+			box-shadow: 4px 4px 20px -1px rgba(0, 0, 0, .6);
+		}
+		&:after {
+			content: '';
+			height: 45px;
+			width: 1px;
+			position: absolute;
+			background: #fff;
+			left: 60px;
+			margin-top: -8px;
+			opacity: 0.4;
+		}
+		&:before {
+			content: '';
+			background: url('/assets/backgrounds/facebook.png');
+			position: absolute;
+			width: 10px;
+			height: 21px;
+			margin-left: -54px;
+			margin-top: 5px;
+		}
+		@media only screen and (max-width:720px) {
+			font-size: 1em;
+			padding: 20px 20px 20px 50px;
+
+			&:hover {
+				letter-spacing: 2px
+			}
+			&:after {
+				margin-top: -13px;
+				left: 40px;
+			}
+			&:before {
+				margin-top: -2px;
+				margin-left: -30px;
+			}
+		}
+		@media only screen and (max-width:520px) {
+			font-size: 1em;
+			padding: 20px 20px 20px 60px;
+
+			&:hover {
+				letter-spacing: 2px
+			}
+			&:after {
+				margin-top: -22px;
+				left: 25%;
+			}
+			&:before {
+				margin-top: 8px;
+				margin-left: -25%;
+			}
+		}
+		@media only screen and (max-width:360px) {
+			letter-spacing: 1px;
+			padding: 20px 20px 20px 50px;
+		}
+	}
+}
+.logo {
+	position: absolute;
+	top: 5%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.footer {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	background: #fff;
+
+	.angularattack {
+		float: left;
+		margin: -110px 0 15px 20px;
+
+		img {
+			width: 90px;
+		}
+	}
+	.copyright {
+		float: right;
+		margin: 20px 20px 0 0;
+		color: #a7a7b7;
+		font-size: 12px;
+
+		a {
+			color: #8080c0;
+			text-decoration: none;
+		}
+	}
+}

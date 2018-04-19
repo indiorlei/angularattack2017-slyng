@@ -1,0 +1,12 @@
+<span id="currentPlayerName"><small>Current turn:</small><br>{{currentPlayerName}}</span>
+<span id="time" *ngIf="timeToShot > 0">{{timeToShot}}</span>
+
+<span id="wind" class="right" *ngIf="currentWind >= 0">{{currentWind | number : '1.0-0'}}</span>
+<span id="wind" class="left" *ngIf="currentWind < 0">{{(currentWind*(-1)) | number : '1.0-0'}}</span>
+
+<span id="sorry" *ngIf="showSorry">Sorry about the game! We had no time to finish :(</span>
+<span id="howTo" *ngIf="!showSorry">Use keyboard arrows to move and press spacebar to shot!</span>
+
+<div id="exitButton" class="content-button">
+  <button class="button" routerLink="/">Exit</button>
+</div>

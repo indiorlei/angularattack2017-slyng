@@ -1,0 +1,57 @@
+<div class="content-back content-button">
+  <button class="button" routerLink="/">Back</button>
+</div>
+
+
+<div class="container container-select-team">
+
+  <div class="row">
+    <div class="title title-game">
+      <h1>{{(roomService.room)?.name}}</h1>
+    </div>
+  </div>
+  <div class="content-team bg-wood">
+    <div class="content-inner">
+      <ul>
+        <li *ngFor="let player of roomService.room.blueTeam | async">
+          <div class="container-image">
+            <figure class="figure-user">
+              <img src="{{ player.photoURL }}" >
+            </figure>
+          </div>
+          <div class="content-name">
+            <h2 class="name-user">{{player.displayName}}</h2>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="content-team bg-wood">
+    <div class="content-inner">
+      <ul>
+        <li *ngFor="let player of roomService.room.redTeam | async">
+          <div class="container-image">
+            <figure class="figure-user">
+              <img src="{{ player.photoURL }}" >
+            </figure>
+          </div>
+          <div class="content-name">
+            <h2 class="name-user">{{player.displayName}}</h2>
+          </div>
+        </li>
+      </ul>  
+    </div>
+  </div>
+
+  <div class="row vs">
+    <img src="/assets/backgrounds/vs.png">
+  </div>
+
+  <div class="row start-button">
+    <div class="content-button">
+      <button class="button" (click)="startGame()">Start</button>
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,326 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+// reset
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+// end reset
+
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,700');
+//font-family: 'Ubuntu', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+//font-family: 'Luckiest Guy', cursive;
+
+@font-face {
+	font-family: 'arfmoochikncheezregular';
+	src: url('/assets/fonts/arfmoochikncheez/arfmoochikncheez.eot');
+	src: url('/assets/fonts/arfmoochikncheez/arfmoochikncheez.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/arfmoochikncheez/arfmoochikncheez.woff2') format('woff2'), url('/assets/fonts/arfmoochikncheez/arfmoochikncheez.woff') format('woff'), url('/assets/fonts/arfmoochikncheez/arfmoochikncheez.ttf') format('truetype'), url('/assets/fonts/arfmoochikncheez/arfmoochikncheez.svg#arfmoochikncheezregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+html {
+	font-family: 'Ubuntu', sans-serif;
+	background-image: url('/assets/backgrounds/bg.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	width: 100vw;
+	height: 100vh;
+}
+body {
+	overflow-x: hidden;
+	overflow-y: auto;
+	display: block;
+}
+.row {
+	display: block;
+	width: 98%;
+	float: left;
+}
+.content-button {
+	border: 10px solid transparent;
+	border-image: url('/assets/backgrounds/border-title.png') 30 round;
+	background-color: #e7a149;
+	box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.1);
+	margin: 20px 0;
+	overflow: hidden;
+	position: relative;
+
+	&:after {
+		background: #fff;
+		content: '';
+		height: 155px;
+		left: -75px;
+		opacity: .2;
+		position: absolute;
+		top: -50px;
+		transform: rotate(35deg);
+		transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+		width: 50px;
+		z-index: 0;
+	}
+	&:hover {
+		&::after {
+			left: 120%;
+			transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+		}
+	}
+	.button {
+		font-family: 'arfmoochikncheezregular';
+		display: inline-block;
+		font-size: 32px;
+		padding: 15px 15px 13px;
+		color: rgba(103, 63, 27, 0.95);
+		text-shadow: 0px 2px 0px #fcc48b, 0px 0px 0px #000;
+		text-decoration: none;
+		letter-spacing: 0;
+		background: transparent;
+		border: none;
+		cursor: pointer;
+	}
+}
+.content-logout {
+	display: inline-block;
+	right: 28px;
+	position: absolute;
+
+	.button {
+		font-size: 22px;
+		padding: 5px;
+	}
+}
+.container-title {
+	padding: 10px;
+}
+.content {
+	.content-inner {
+		padding: 20px;
+	}
+}
+.bg-block {
+	float: left;
+	width: 100%;
+	display: block;
+}
+.bg-wood {
+	border: 10px solid transparent;
+	border-image: url('/assets/backgrounds/border.png') 30 round;
+	background-image: url('/assets/backgrounds/bg-wood.png');
+	box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.1);
+}
+.title {
+	border: 10px solid transparent;
+	border-image: url('/assets/backgrounds/border-title.png') 30 round;
+	background-color: #e7a149;
+	box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.1);
+	display: inline-block;
+	padding: 15px 47px 13px;
+	margin: 20px 0;
+	position: relative;
+
+	h1 {
+		font-family: 'arfmoochikncheezregular';
+		font-size: 32px;
+		color: rgba(103, 63, 27, 0.95);
+		text-shadow: 0px 2px 0px #fcc48b, 0px 0px 0px #000;
+	}
+	&:before {
+		content: '';
+		position: absolute;
+		background: url('/assets/backgrounds/rope-left.png');
+		width: 34px;
+		height: 55px;
+		left: -10px;
+		top: 0;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		background: url('/assets/backgrounds/rope-right.png');
+		width: 29px;
+		height: 55px;
+		right: -10px;
+		top: 0;
+	}
+}
+// 
+// 
+//loader
+.loader {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	background-image: url('/assets/backgrounds/bg-logo.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+
+	>div {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%);
+	}
+}
+@-webkit-keyframes ball-scale-ripple-multiple {
+	0% {
+		transform: scale(0.1);
+		opacity: 1;
+	}
+	70% {
+		transform: scale(1);
+		opacity: 0.7;
+	}
+	100% {
+		opacity: 0.0;
+	}
+}
+@keyframes ball-scale-ripple-multiple {
+	0% {
+		transform: scale(0.1);
+		opacity: 1;
+	}
+	70% {
+		transform: scale(1);
+		opacity: 0.7;
+	}
+	100% {
+		opacity: 0.0;
+	}
+}
+.ball-scale-ripple-multiple {
+	position: relative;
+	transform: translateY(-25px);
+}
+.ball-scale-ripple-multiple > div:nth-child(0) {
+	animation-delay: -0.8s;
+}
+.ball-scale-ripple-multiple > div:nth-child(1) {
+	animation-delay: -0.6s;
+}
+.ball-scale-ripple-multiple > div:nth-child(2) {
+	animation-delay: -0.4s;
+}
+.ball-scale-ripple-multiple > div:nth-child(3) {
+	animation-delay: -0.2s;
+}
+.ball-scale-ripple-multiple > div {
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	position: absolute;
+	top: -2px;
+	left: -26px;
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	border: 2px solid #fff;
+	animation: ball-scale-ripple-multiple 1.25s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
+}
+//end loader
+// 
+//
+
+
+// modal
+.btn-close {
+	color: rgba(103, 63, 27, 1);
+	font-size: 40px;
+	text-decoration: none;
+	position: absolute;
+	right: 23px;
+	top: 3px;
+}
+.btn-close:hover {
+	color: rgba(103, 63, 27, 0.6);
+}
+.modal:before {
+	content: "";
+	display: none;
+	background: rgba(0, 0, 0, 0.6);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10;
+}
+.modal:target:before {
+	display: block;
+}
+.modal:target .modal-dialog {
+	transform: translate(-50%, -50%);
+	top: 50%;
+}
+.modal-dialog {
+	border: 10px solid transparent;
+	border-image: url('/assets/backgrounds/border-title.png') 30 round;
+	background-color: #e7a149;
+	box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.1);
+	display: inline-block;
+	padding: 15px 47px 13px;
+	margin: 20px 0;
+	position: relative;
+	position: fixed;
+	left: 50%;
+	top: -100%;
+	z-index: 11;
+	transform: translate(0, -500%);
+	transition: transform 0.3s ease-out;
+
+	&:before {
+		content: '';
+		position: absolute;
+		background: url('/assets/backgrounds/rope-left.png');
+		width: 34px;
+		height: 55px;
+		left: -10px;
+		top: 0;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		background: url('/assets/backgrounds/rope-right.png');
+		width: 29px;
+		height: 55px;
+		right: -10px;
+		top: 0;
+	}
+}
+.modal-body {
+	padding: 20px;
+}
+.modal-header {
+	.title-form {
+		font-family: 'arfmoochikncheezregular';
+		display: inline-block;
+		font-size: 32px;
+		color: rgba(103, 63, 27, 0.95);
+		text-shadow: 0px 2px 0px #fcc48b, 0px 0px 0px #000;
+		letter-spacing: 0;
+		background: transparent;
+	}
+}
